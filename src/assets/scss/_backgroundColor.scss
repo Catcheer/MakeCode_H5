@@ -1,0 +1,25 @@
+.bg {
+    &-transparent {
+        background: transparent;
+    }
+    &-color {
+        &-fff {
+            background-color: #fff;
+        }
+        &_1c1c20 {
+            background-color: #1c1c20;
+        }
+        &-ff4d6b {
+            background-color: #ff4d6b;
+        }
+        &_444 {
+            background-color: #444;
+        }
+         &_555 {
+            background-color: #555;
+        }
+        &_777 {
+            background-color: #777;
+        }
+    }
+}

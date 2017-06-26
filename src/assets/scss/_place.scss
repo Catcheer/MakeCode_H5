@@ -1,0 +1,26 @@
+.top {
+    &_0 {
+        top: 0px;
+    }
+}
+
+.right {
+    &_0 {
+        right: 0px;
+    }
+}
+
+.bottom {
+    &_0 {
+        bottom: 0px;
+    }
+    &_023 {
+        bottom: -23px; /*no*/
+    }
+}
+
+.left {
+    &_0 {
+        left: 0px;
+    }
+}

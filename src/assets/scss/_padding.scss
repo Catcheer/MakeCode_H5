@@ -1,0 +1,34 @@
+@for $i from 1 to 50 {
+    .padding {
+        &_#{$i} {
+            padding: #{$i}px;
+        }
+        &-x {
+            &_#{$i} {
+                padding-right: #{$i}px;
+                padding-left: #{$i}px;
+            }
+        }
+        &-y {
+            &_#{$i} {
+                padding-top: #{$i}px;
+                padding-bottom: #{$i}px;
+            }
+        }
+        &-top {
+            &_#{$i} {
+                padding-top: #{$i}px;
+            }
+        }
+        &-left {
+            &_#{$i} {
+                padding-left: #{$i}px;
+            }
+        }
+        &-bottom {
+            &_#{$i} {
+                padding-bottom: #{$i}px;
+            }
+        }
+    }
+}

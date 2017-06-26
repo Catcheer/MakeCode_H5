@@ -1,0 +1,40 @@
+.border {
+    &_333 {
+        &_1 {
+            border: 1px solid #333;
+        }
+    }
+    &-ccc {
+        &_1 {
+            border: 1px solid #ccc;
+        }
+    }
+}
+
+.border {
+    &-bottom {
+        &_ff4d6b {
+            &_6 {
+                border-bottom: 6px solid #ff4d6b;
+            }
+        }
+        &_ccc{
+          &_1{
+             border-bottom: 1px solid #ccc;
+          }
+        }
+    }
+}
+
+.border {
+    &-radius {
+        &_5 {
+            border-radius: 5px;
+        }
+        &-b {
+            &_50 {
+                border-radius: 50%;
+            }
+        }
+    }
+}

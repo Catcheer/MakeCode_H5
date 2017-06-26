@@ -1,0 +1,71 @@
+<div class="padding-x_30">
+  <div class="height_60"></div>
+  <!--输入框 start-->
+  <textarea name="" id="" cols="30" rows="10" class="inp-url-box w-b_100 font-size_28 bg-transparent border_333_1 height_160 border-radius_5 padding_20 box-border"
+    placeholder="粘贴海外购物网站的网址" [(ngModel)]="webUrl" (blur)="update()"></textarea>
+  <!--输入框 end-->
+
+  <!--一键海淘btn start-->
+  <div class="bg-color-ff4d6b height_70 border-radius_5 line-height_70 font-size_32 color-fff text-center margin-top_30  margin-bottom_40"
+    [class.opacity07]="!webUrl">一键海淘</div>
+  <!--一键海淘btn end-->
+
+  <!--scan example btn start-->
+  <div class="font-size_26 color_0079ff text-right">
+    <span routerLink="/example">查看示例</span>
+    <span class="arr-right"></span>
+  </div>
+  <!--scan example btn end-->
+  <div class="height_140"></div>
+
+  <!--支持网站 start-->
+  <div class="flex-box align-items-center">
+    <div class="flex_1 height-px_1 bg-color_777"></div>
+    <h1 class="font-size_30 color_666 text-center padding-x_10">支持美/日/德/法/英等多国官网</h1>
+    <div class="flex_1 height-px_1 bg-color_777"></div>
+  </div>
+
+  <!--web list start-->
+  <ul class="web-list margin-top_30  flex-box flex-wrap-wrap">
+    <li class="w_220   over-flow-hidden border-radius_5 border-ccc_1 flex-box align-items-center justify-center bg-color-fff box-border padding-x_5 padding-y_2">
+      <a href="https://www.amazon.com/">
+      <img class="w_190" src="../../assets/images/amazon-usa.png" alt="">
+      </a>
+    </li>
+    <li class="w_220   over-flow-hidden border-radius_5 border-ccc_1 flex-box align-items-center justify-center bg-color-fff box-border padding-x_5 padding-y_2">
+      <a href="https://www.amazon.co.jp/">
+      <img class="w_190" src="../../assets/images/amazon-jp.png" alt="">
+      </a>
+    </li>
+    <li class="w_220   over-flow-hidden border-radius_5 border-ccc_1 flex-box align-items-center justify-center bg-color-fff box-border padding-x_5 padding-y_2">
+      <a href="http://www.ebay.com">
+      <img class="w_190" src="../../assets/images/ebay.png" alt="">
+        </a>
+    </li>
+    <li class="w_220   over-flow-hidden border-radius_5 border-ccc_1 flex-box align-items-center justify-center bg-color-fff box-border padding-x_5 padding-y_2">
+      <a href="http://www.6pm.com/">
+      <img class="w_190" src="../../assets/images/6pm.png" alt="">
+      </a>
+    </li>
+    <li class="w_220   over-flow-hidden border-radius_5 border-ccc_1 flex-box align-items-center justify-center bg-color-fff box-border padding-x_5 padding-y_2">
+      <a href="http://www.newbalance.com/">
+      <img class="w_190" src="../../assets/images/balance.png" alt="">
+      </a>
+    </li>
+    <li class="w_220   over-flow-hidden border-radius_5 border-ccc_1 flex-box align-items-center justify-center bg-color-fff box-border padding-x_5 padding-y_2">
+      <a href="https://www.ralphlauren.cn/zh-hans/">
+      <img class="w_190" src="../../assets/images/ralph.png" alt="">
+      </a>
+    </li>
+  </ul>
+  <!--web list end-->
+
+  <!--支持网站 end-->
+
+  <!--查看全部 start-->
+  <div class="bg-color-fff height_70 border-radius_5 line-height_70 font-size_30  border-ccc_1 color_666 text-center margin-top_20"
+    routerLink="/support">查看全部</div>
+  <!--查看全部 end-->
+
+
+</div>

@@ -1,0 +1,9 @@
+@for $i from 10 through 40 {
+    .font {
+        &-size {
+            &_#{$i} {
+                font-size: #{$i}px; /*no*/
+            }
+        }
+    }
+}

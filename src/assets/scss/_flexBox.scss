@@ -1,0 +1,30 @@
+.flex {
+    &-box {
+        display: flex;
+    }
+    &-wrap {
+        &-wrap {
+            flex-wrap: wrap;
+        }
+    }
+}
+
+.justify {
+    &-between {
+        justify-content: space-between;
+    }
+    &-center {
+        justify-content: center;
+    }
+    &-around {
+        justify-content: space-around;
+    }
+}
+
+@for $i from 1 to 3 {
+    .flex {
+        &_#{$i} {
+            flex:#{$i};
+        }
+    }
+}

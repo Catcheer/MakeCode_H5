@@ -1,0 +1,16 @@
+.line {
+    &-height {
+        &_42 {
+            line-height: 42px;
+        }
+        &_45 {
+            line-height: 45px;
+        }
+        &_70 {
+            line-height: 70px;
+        }
+        &_80 {
+            line-height: 80px;
+        }
+    }
+}
