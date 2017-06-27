@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute, Params } from '@angular/router';
 import { ProductServer } from '../servers/product.server'
+import { Title } from '@angular/platform-browser';
 import CONFIG from '../base.config'
 
 import 'rxjs/add/operator/switchMap';
@@ -18,7 +19,7 @@ export class ProductComponent implements OnInit {
   private tmpParam: any
   public urlcode: UlrCode
   public qrCode: string = ''
-  constructor(private route: ActivatedRoute, private product: ProductServer) { }
+  constructor(private route: ActivatedRoute, private product: ProductServer, private titleService: Title) { }
   ngOnInit(): void {
     console.log('ngOnInit')
     console.log(localStorage.target)
@@ -34,6 +35,10 @@ export class ProductComponent implements OnInit {
       console.log(res)
       this.productData = res.Data
     })
+
+    // set title
+
+    this.titleService.setTitle('长按二维码下单')
 
     // this.route.params
     //   .switchMap((params: Params) => {

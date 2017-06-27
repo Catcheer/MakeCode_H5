@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router'
 import { FormsModule } from '@angular/forms'
 
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 // import { HeaderComponent } from './layout/header.component'
 import { HomeComponent } from './home/home.component'
@@ -23,7 +23,7 @@ import { AppRoutingModule } from './app-routing.module';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [HttpServer],
+  providers: [HttpServer, Title],
   declarations: [
     AppComponent,
     // HeaderComponent,

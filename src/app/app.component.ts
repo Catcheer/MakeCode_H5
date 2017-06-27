@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 
 import '../style.css';
@@ -7,4 +8,6 @@ import '../style.css';
   selector: 'my-app',
   templateUrl: './app.component.html',
 })
-export class AppComponent { }
+export class AppComponent {
+  
+ }
