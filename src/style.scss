@@ -147,7 +147,7 @@ textarea:-ms-input-placeholder {
 }
 
 .all-countries-list {
-    width: 813px;
+  transition: all 0.3s ease;
     li:last-child {
         margin-right: 60px;
     }

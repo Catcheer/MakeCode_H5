@@ -4,6 +4,9 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var helpers = require('./helpers');
 
 module.exports = {
+
+
+
   entry: {
     'polyfills': './src/polyfills.ts',
     'vendor': './src/vendor.ts',
@@ -13,6 +16,17 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.js']
   },
+  // webpack-dev-server的配置
+  devServer: {
+    proxy: {
+      '/sixcity': {
+        target: 'http://www.6city.com:80',
+        changeOrigin: true,
+        secure: false
+      }
+    }
+  },
+
 
   module: {
     rules: [

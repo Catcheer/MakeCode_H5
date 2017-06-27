@@ -16,19 +16,20 @@ const routes = [
     component: SupportComponent
   },
   {
-    path: 'product/:code',
+    path: 'product',
     component: ProductComponent
   },
   {
     path: 'example',
     component: ExampleComponent
   },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-   {
+  {
     path: '',
-    component: HomeComponent
+    redirectTo: '/home',
+    pathMatch: 'full'
   },
-  
+
+
 
 ]
 

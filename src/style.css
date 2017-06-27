@@ -3161,7 +3161,10 @@ textarea:-ms-input-placeholder {
 }
 
 .all-countries-list {
-  width: 10.84rem;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .all-countries-list li:last-child {

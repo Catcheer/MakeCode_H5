@@ -4,20 +4,21 @@
     <div class="flex-box padding-top_30">
       <!--图片 start-->
       <div class="w_220 height_220 margin-right_20">
-        <img class="w_220 height_220" src="../../assets/images/product.jpg" alt="">
+        <img class="w_220 height_220" [src]="productData.Picture" alt="">
       </div>
       <!--图片 end-->
       <!--文字描述 start-->
       <div class="flex_1">
         <h4 class="font-size_32 line-height_45 height_90 line-two">
-          AmazonBasics Wireless Mouse with Nano Receiver (MGR0975)
+          {{productData.Title}}
         </h4>
         <div class="color_000 font-size_32 margin-top_26 margin-bottom_23 line-height_42">
-          RMB 286.50 <span class="color_999 font-size_24">(国际运费后付)</span>
+          RMB {{productData.Price}} <span class="color_999 font-size_24">(国际运费后付)</span>
         </div>
         <div class="font-size_26">
           <span class="color_999">源自</span>
-          <span class="color_0079ff ">美国亚马逊</span><span class="arr-right"></span>
+          <a [href]="productData.Url" class="color_0079ff ">{{productData.SiteName}}</a>
+          <span class="arr-right"></span>
         </div>
       </div>
       <!--文字描述 end-->
@@ -27,7 +28,7 @@
 
     <!--商品二维码 start-->
     <div class="w_650 height_650  margin-y-auto margin-top_60 position-relative flex-box align-items-center justify-center">
-      <img class="w_570 height_570 " src="../../assets/images/qrcode.png" alt="">
+      <img class="w_570" [src]="qrCode" alt="">
       <div>
         <img class="w_110 height_110 position-absolute top_0 left_0" src="../../assets/images/coner.png" alt="">
         <img class="w_110 height_110 position-absolute top_0 right_0 transform-rotate_90" src="../../assets/images/coner.png" alt="">

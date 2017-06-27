@@ -11,12 +11,18 @@ export class HomeComponent {
   constructor(private router: Router, ) { }
   update() {
     if (this.webUrl.length == 0) {
-      return
+      return false
     }
   }
   goProduct() {
+    if (this.webUrl.length == 0) {
+      alert('null')
+      return false
+    }
+    this.router.navigate(['/product']);
     console.log(this.webUrl)
-    this.router.navigate(['/product', decodeURIComponent(this.webUrl)]);
+    localStorage.target = this.webUrl
+    console.log(localStorage.target)
   }
 
 }
