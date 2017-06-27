@@ -16,7 +16,7 @@ const routes = [
     component: SupportComponent
   },
   {
-    path: 'product',
+    path: 'product/:code',
     component: ProductComponent
   },
   {

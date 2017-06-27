@@ -6,6 +6,8 @@ import '@angular/common';
 import '@angular/http';
 import '@angular/router';
 
+import 'whatwg-fetch'
+
 // RxJS
 import 'rxjs';
 
