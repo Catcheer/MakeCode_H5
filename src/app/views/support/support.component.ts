@@ -16,9 +16,7 @@ export class SupportComponent implements OnInit {
   public webList: any = []
   public allCountryList: string[] = []
   public seledCountry: string = allOfCountry
-  constructor(private product: ProductServer, private titleService: Title) {
-
-  }
+  constructor(private product: ProductServer, private titleService: Title) { }
   ngOnInit() {
     // 初始化
     this.init()
@@ -97,7 +95,6 @@ export class SupportComponent implements OnInit {
       for (let i = 0; i < len; i += 1) {
         const WebSites = list[i].WebSites
         let tmpArr = WebSites.filter((val: any) => val.CountryName == seledCountry)
-        console.log(tmpArr)
         list[i].WebSites = tmpArr
         if (tmpArr.length > 0) {
           newArr.push(list[i])

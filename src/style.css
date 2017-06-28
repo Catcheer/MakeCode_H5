@@ -3187,3 +3187,39 @@ textarea:-ms-input-placeholder {
 .web-list li:nth-child(3n) {
   margin-right: 0;
 }
+
+.pop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.pop-con {
+  background: rgba(10, 10, 10, 0.7);
+  padding: 0.4rem 0.5rem;
+  font-size: 24px;
+  color: #fff;
+}
+
+svg path,
+svg rect {
+  fill: #FF6700;
+}

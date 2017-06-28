@@ -1,5 +1,6 @@
 import { Component } from '@angular/core'
 import { Router } from '@angular/router'
+import { WetoastServer } from '../../servers/wetoast.server'
 
 
 @Component({
@@ -8,15 +9,17 @@ import { Router } from '@angular/router'
 
 export class HomeComponent {
   private webUrl: string = ''
-  constructor(private router: Router, ) { }
-  update() {
-    if (this.webUrl.length == 0) {
-      return false
-    }
-  }
+  public tipsObj: any
+  constructor(private router: Router, private wetoastServer: WetoastServer) { }
+
   goProduct() {
     if (this.webUrl.length == 0) {
-      alert('null')
+      this.wetoastServer.tipsFlag = true
+      this.wetoastServer.tipsMes = '请输入商品url'
+      setTimeout(() => {
+        this.wetoastServer.tipsFlag = false
+        this.wetoastServer.tipsMes = ""
+      }, 2000)
       return false
     }
     this.router.navigate(['/product']);

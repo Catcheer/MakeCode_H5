@@ -10,8 +10,10 @@ import { HomeComponent } from './views/home/home.component'
 import { SupportComponent } from './views/support/support.component'
 import { ProductComponent } from './views/product/product.component'
 import { ExampleComponent } from './views/example/example.component'
+import { WetoastComponent } from './views/layout/wetoast.component'
 import { HttpServer } from './http.server'
 
+import { WetoastServer } from './servers/wetoast.server'
 import { ProductServer } from './servers/product.server'
 
 // 路由
@@ -26,10 +28,10 @@ import { AppRoutingModule } from './app-routing.module';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [HttpServer, Title, ProductServer],
+  providers: [HttpServer, Title, ProductServer, WetoastServer],
   declarations: [
     AppComponent,
-    // HeaderComponent,
+    WetoastComponent,
     HomeComponent,
     SupportComponent,
     ProductComponent,
