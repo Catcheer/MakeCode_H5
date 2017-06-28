@@ -3160,6 +3160,10 @@ textarea:-ms-input-placeholder {
   overflow-x: scroll;
 }
 
+.white-space-nowrap {
+  white-space: nowrap;
+}
+
 .all-countries-list {
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;

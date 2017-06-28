@@ -23,6 +23,11 @@ module.exports = {
         target: 'http://www.6city.com:80',
         changeOrigin: true,
         secure: false
+      },
+      '/catelog/*': {
+        target: 'http://192.168.1.187:9000',
+        changeOrigin: true,
+        secure: false
       }
     }
   },

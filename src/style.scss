@@ -146,8 +146,16 @@ textarea:-ms-input-placeholder {
     }
 }
 
+.white {
+    &-space {
+        &-nowrap {
+            white-space: nowrap;
+        }
+    }
+}
+
 .all-countries-list {
-  transition: all 0.3s ease;
+    transition: all 0.3s ease;
     li:last-child {
         margin-right: 60px;
     }

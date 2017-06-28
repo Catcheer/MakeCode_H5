@@ -1,0 +1,45 @@
+<div class="bg-color-fff">
+  <!--国家list start-->
+  <div class="">
+    <ul class="all-countries-list height_80 bg-color_555 over-x-scroll white-space-nowrap">
+      <li *ngFor="let item of allCountryList" class="font-size_28 color_d6d6d6  height_80 box-border line-height_80 margin-left_60 display-inline-block"
+        [class.border-bottom_ff4d6b_6]="2==2">{{item}}</li>
+      <!--<li class="font-size_28 color_d6d6d6  height_80 box-border line-height_80 margin-left_60 display-inline-block">中国</li>
+      <li class="font-size_28 color_d6d6d6  height_80 box-border line-height_80 margin-left_60 display-inline-block">日本</li>
+      <li class="font-size_28 color_d6d6d6  height_80 box-border line-height_80 margin-left_60 display-inline-block">美国</li>
+      <li class="font-size_28 color_d6d6d6  height_80 box-border line-height_80 margin-left_60 display-inline-block">法国</li>
+      <li class="font-size_28 color_d6d6d6  height_80 box-border line-height_80 margin-left_60 display-inline-block">德国</li>-->
+
+    </ul>
+  </div>
+
+  <!--国家list end-->
+  <!--网站块 start-->
+  <div *ngFor="let item of webListAll">
+    <!--title start-->
+    <div class="flex-box align-items-center margin-y_20 padding-left_20">
+      <span class="w_28 height_28 bg-color_444 border-radius-b_50  margin-right_10 flex-box align-items-center justify-center">
+      <img class="w_10 height_18" src="../../../assets/images/icon_right.png" alt="">
+    </span>
+      <h4 class="font-size_28">{{item.Name}}</h4>
+    </div>
+    <!--title end-->
+    <!--web list start-->
+    <ul class="over-x-scroll white-space-nowrap border-bottom_ccc_1 padding-bottom_25">
+      <!--website start-->
+      <li class="margin-left_20 text-center display-inline-block" *ngFor="let website of item.WebSites">
+        <a [href]="'http://'+website.Url">
+          <div class="w_210 height_110   over-flow-hidden border-radius_5 border-ccc_1 flex-box align-items-center bg-color-fff box-border padding-x_5 padding-y_2">
+            <img class="w-b_100" [src]="website.Logo" alt="">
+          </div>
+        </a>
+        <div class="line-one margin-top_8 w_210 ">{{website.Name}}</div>
+      </li>
+      <!--website start-->
+    </ul>
+    <!--web list end-->
+  </div>
+
+  <!--网站块 end-->
+
+</div>

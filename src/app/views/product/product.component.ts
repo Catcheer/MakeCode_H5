@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute, Params } from '@angular/router';
-import { ProductServer } from '../servers/product.server'
+import { ProductServer } from '../../servers/product.server'
 import { Title } from '@angular/platform-browser';
-import CONFIG from '../base.config'
+import CONFIG from '../../base.config'
 
 import 'rxjs/add/operator/switchMap';
 
@@ -10,7 +10,6 @@ class UlrCode {
   "target": string
 }
 @Component({
-  providers: [ProductServer],
   templateUrl: './product.component.html'
 })
 
