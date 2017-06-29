@@ -53,6 +53,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.1.2",
     "raw-loader": "^0.5.1",
+    "rimraf": "^2.6.1",
     "sass-loader": "^6.0.6",
     "scss-loader": "0.0.1",
     "style-loader": "^0.18.2",

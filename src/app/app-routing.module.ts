@@ -23,16 +23,16 @@ const routes = [
     path: 'example',
     component: ExampleComponent
   },
-  {
-    path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },
-  {
-    path: '**',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  }
+  // {
+  //   path: '',
+  //   redirectTo: 'home',
+  //   pathMatch: 'full'
+  // },
+  // {
+  //   path: '**',
+  //   redirectTo: 'home',
+  //   pathMatch: 'full'
+  // }
 
 
 
@@ -40,7 +40,8 @@ const routes = [
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  // ng 默认采用h5风格路由    通过添加{ useHash: true }  设置为hash 路由模式
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
