@@ -1,5 +1,5 @@
-<div class="pop" *ngIf="tipsObj.tipsFlag">
-  <div class="pop-con">
+<div class="pop" >
+  <div class="pop-con"  *ngIf="tipsObj.tipsFlag" [@flyInOut]="state">
     {{tipsObj.tipsMes}}
   </div>
 </div>

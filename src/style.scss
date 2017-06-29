@@ -181,9 +181,8 @@ textarea:-ms-input-placeholder {
 
 .pop {
     position: fixed;
-    top: 0;
+    top: 400px;
     right: 0;
-    bottom: 0;
     left: 0;
     z-index: 9;
     display: flex;
@@ -198,7 +197,3 @@ textarea:-ms-input-placeholder {
     }
 }
 
-svg path,
-svg rect {
-    fill: #FF6700;
-}

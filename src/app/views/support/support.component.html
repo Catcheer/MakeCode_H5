@@ -22,7 +22,7 @@
     <ul class="over-x-scroll white-space-nowrap border-bottom_ccc_1 padding-bottom_25">
       <!--website start-->
       <li class="margin-left_20 text-center display-inline-block" *ngFor="let website of item.WebSites">
-        <a [href]="'http://'+website.Url">
+        <a [href]="website.Url">
           <div class="w_210 height_110   over-flow-hidden border-radius_5 border-ccc_1 flex-box align-items-center bg-color-fff box-border padding-x_5 padding-y_2">
             <img class="w-b_100" [src]="website.Logo" alt="">
           </div>

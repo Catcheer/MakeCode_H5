@@ -18,5 +18,19 @@ export default {
       }
       return temp;
     }
+  },
+
+  /**
+   * 验证网址
+   * 
+   * @param {string} url 
+   * @returns 
+   */
+  CheckUrl(url: string) {
+    var reg = /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?/;
+    if (!reg.test(url)) {
+      return false
+    }
+    return true
   }
 }

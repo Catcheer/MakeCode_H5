@@ -1,6 +1,7 @@
 import { Component } from '@angular/core'
 import { Router } from '@angular/router'
 import { WetoastServer } from '../../servers/wetoast.server'
+import Tool from '../../util/Tool'
 
 
 @Component({
@@ -22,10 +23,25 @@ export class HomeComponent {
       }, 2000)
       return false
     }
+
+    let checkUrl = Tool.CheckUrl(this.webUrl)
+    if (!checkUrl) {
+      this.wetoastServer.tipsFlag = true
+      this.wetoastServer.tipsMes = '请输入正确的商品url'
+      setTimeout(() => {
+        this.wetoastServer.tipsFlag = false
+        this.wetoastServer.tipsMes = ""
+      }, 2000)
+      return false
+    }
+
+
     this.router.navigate(['/product']);
     console.log(this.webUrl)
     localStorage.target = this.webUrl
     console.log(localStorage.target)
   }
+
+
 
 }
