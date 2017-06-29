@@ -18,8 +18,7 @@ module.exports = webpackMerge(commonConfig, {
   ],
 
   devServer: {
-    // historyApiFallback: true,
-    disableDotRule:true,
+    historyApiFallback: true,
     stats: 'minimal'
   }
 });
