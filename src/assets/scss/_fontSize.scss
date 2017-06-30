@@ -2,7 +2,7 @@
     .font {
         &-size {
             &_#{$i} {
-                font-size: #{$i}px; /*no*/
+                font-size: #{$i}px; 
             }
         }
     }

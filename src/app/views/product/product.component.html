@@ -4,7 +4,7 @@
     <div class="flex-box padding-top_30">
       <!--图片 start-->
       <div class="w_220 height_220 margin-right_20 flex-box align-items-center justify-center">
-        <img *ngIf="!productData.Picture" src="../../../assets/images/balls.svg" alt="">
+        <img *ngIf="!productData.Picture" class="w_220 height_220" src="../../../assets/images/balls.svg" alt="">
         <img *ngIf="productData.Picture" class="w_220 height_220" [src]="productData.Picture" alt="">
       </div>
       <!--图片 end-->
@@ -40,7 +40,7 @@
           alt="">
       </div>
       <div class="position-absolute text-center bottom_023 font-size_36 color_ff4d6b w-b_100">
-        长按识别图中二维码
+        长按识别二维码
       </div>
     </div>
 

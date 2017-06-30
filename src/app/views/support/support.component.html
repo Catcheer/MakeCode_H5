@@ -1,9 +1,12 @@
+<img class="balls-loading" src="../../../assets/images/balls.svg" alt="" *ngIf="showLoadingBalls" />
+<!--err process start-->
 <div class="flex-box align-items-center justify-center height-b_100 bg-color-fff text-center font-size_28" *ngIf="errObj.err">
   <div>
     <img class="w_220" src="../../../assets/images/error.jpg" alt="">
     <div class="color_999 margin-top_10">{{errObj.errMes}}</div>
   </div>
 </div>
+<!--err process end-->
 
 <div class="bg-color-fff" *ngIf="!errObj.err">
   <!--国家list start-->
@@ -28,8 +31,8 @@
     <!--web list start-->
     <ul class="over-x-scroll white-space-nowrap border-bottom_ccc_1 padding-bottom_25">
       <!--website start-->
-      <li class="margin-left_20 text-center display-inline-block" *ngFor="let website of item.WebSites">
-        <a [href]="website.Url">
+      <li class="margin-left_20 text-center display-inline-block" *ngFor="let website of item.WebSites;let i=index" [class.margin-right_20]="i==item.WebSites.length-1">
+        <a [href]="'http://'+website.Url">
           <div class="w_210 height_110   over-flow-hidden border-radius_5 border-ccc_1 flex-box align-items-center bg-color-fff box-border padding-x_5 padding-y_2">
             <img class="w-b_100" [src]="website.Logo" alt="">
           </div>
