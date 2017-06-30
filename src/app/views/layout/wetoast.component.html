@@ -1,5 +1,14 @@
-<div class="pop" >
-  <div class="pop-con"  *ngIf="tipsObj.tipsFlag" [@flyInOut]="state">
+<!--pop block start-->
+<div class="pop">
+  <div class="pop-con" *ngIf="tipsObj.tipsFlag" [@flyInOut]="state">
     {{tipsObj.tipsMes}}
   </div>
 </div>
+<!--pop block end-->
+
+<!--loading balls start-->
+<div>
+  <img class="balls-loading" src="../../../assets/images/balls.svg" alt="" *ngIf="tipsObj.showLoadingBalls" />
+</div>
+<!--loading balls end-->
+

@@ -32,6 +32,7 @@ import {
 
 export class WetoastComponent {
   public tipsObj: any = {}
+  public showLoadingBalls: boolean
   constructor(private wetoastServer: WetoastServer) {
     this.tipsObj = wetoastServer
   }

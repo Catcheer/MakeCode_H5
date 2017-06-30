@@ -66,4 +66,9 @@
             height: 1px;
         }
     }
+    &-max {
+        &_90 {
+            max-height: 90px;
+        }
+    }
 }

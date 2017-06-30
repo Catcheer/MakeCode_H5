@@ -5,4 +5,5 @@ import { Injectable } from '@angular/core'
 export class WetoastServer {
   public tipsFlag: boolean = false
   public tipsMes: string = ""
+  public showLoadingBalls: boolean = false
 }

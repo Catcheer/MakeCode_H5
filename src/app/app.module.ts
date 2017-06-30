@@ -12,6 +12,7 @@ import { SupportComponent } from './views/support/support.component'
 import { ProductComponent } from './views/product/product.component'
 import { ExampleComponent } from './views/example/example.component'
 import { WetoastComponent } from './views/layout/wetoast.component'
+// import { LoadingBalls } from './views/layout/loading.component'
 import { HttpServer } from './http.server'
 
 import { WetoastServer } from './servers/wetoast.server'
@@ -37,7 +38,8 @@ import { AppRoutingModule } from './app-routing.module';
     HomeComponent,
     SupportComponent,
     ProductComponent,
-    ExampleComponent
+    ExampleComponent,
+    // LoadingBalls
   ],
   bootstrap: [AppComponent]
 })

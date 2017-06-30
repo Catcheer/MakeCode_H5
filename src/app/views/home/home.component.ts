@@ -11,8 +11,8 @@ import Tool from '../../util/Tool'
 export class HomeComponent {
   private webUrl: string = ''
   public tipsObj: any
-  constructor(private router: Router, private wetoastServer: WetoastServer) { }
 
+  constructor(private router: Router, private wetoastServer: WetoastServer) {}
   /**
    * 点击一键海淘按钮
    * 
@@ -21,13 +21,13 @@ export class HomeComponent {
    */
   goProduct() {
     if (this.webUrl.length == 0) {
-      let mes: string = "请输入商品url~"
+      let mes: string = "请输入正确的网址"
       this.changeWetoastState(mes)
       return false
     }
     let checkUrl = Tool.CheckUrl(this.webUrl)
     if (!checkUrl) {
-      let mes: string = "请输入正确的商品url~"
+      let mes: string = "请输入正确的网址"
       this.changeWetoastState(mes)
       return false
     }

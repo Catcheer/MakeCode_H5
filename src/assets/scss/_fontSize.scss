@@ -2,8 +2,16 @@
     .font {
         &-size {
             &_#{$i} {
-                font-size: #{$i}px; 
+                font-size: #{$i}px;
             }
+        }
+    }
+}
+
+.font {
+    &-weight {
+        &_600 {
+            font-weight: 600;
         }
     }
 }
