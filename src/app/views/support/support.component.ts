@@ -17,10 +17,6 @@ export class SupportComponent implements OnInit {
   public webList: any = []
   public allCountryList: string[] = []
   public seledCountry: string = allOfCountry
-  private errObj: any = {
-    err: false,
-    errMes: "",
-  }
   private showLoadingBalls: boolean = false
   constructor(private product: ProductServer, private titleService: Title, private wetoastServer: WetoastServer) { }
   ngOnInit() {
@@ -38,13 +34,15 @@ export class SupportComponent implements OnInit {
     // set html title
     this.titleService.setTitle('支持的海外网站')
     this.wetoastServer.showLoadingBalls = true
+    this.wetoastServer.httpFail = false
+    this.wetoastServer.httpMes = ""
     this.product.getAllWebs()
       .then((res: any) => {
         console.log(res)
         this.wetoastServer.showLoadingBalls = false
         if (res.httpFalse) {
-          this.errObj.err = true
-          this.errObj.errMes = res.errMes
+          this.wetoastServer.httpFail = true
+          this.wetoastServer.httpMes = res.errMes
           return
         } else {
           const list = res.List

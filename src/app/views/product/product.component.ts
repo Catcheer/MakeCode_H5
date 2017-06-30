@@ -25,6 +25,8 @@ export class ProductComponent implements OnInit {
   constructor(private route: ActivatedRoute, private product: ProductServer, private titleService: Title, private wetoastServer: WetoastServer) { }
   ngOnInit(): void {
     this.wetoastServer.showLoadingBalls = true  // show loading balls
+    this.wetoastServer.httpFail = false
+    this.wetoastServer.httpMes = ""
 
     // 请求接口
     const obj = {
@@ -33,11 +35,14 @@ export class ProductComponent implements OnInit {
     this.product.getProduct(obj).then(res => {
       this.wetoastServer.showLoadingBalls = false // hide loading balls
       if (res.httpFalse) {
+        this.wetoastServer.httpFail = true
+        this.wetoastServer.httpMes = res.errMes
         return
       }
       const OriginalPrice = res.Data.OriginalPrice
       if (OriginalPrice == -1) {
-        console.log("抓取失败")
+        this.wetoastServer.httpFail = true
+        this.wetoastServer.httpMes = "抓取失败"
         return
       }
       this.productData = res.Data

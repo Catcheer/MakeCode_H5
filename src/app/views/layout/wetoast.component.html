@@ -12,3 +12,11 @@
 </div>
 <!--loading balls end-->
 
+<!--请求返回错误case start-->
+<div class="flex-box align-items-center justify-center height-b_100 bg-color-fff text-center font-size_28" *ngIf="tipsObj.httpFail">
+  <div>
+    <img class="w_220" src="../../../assets/images/error.jpg" alt="">
+    <div class="color_999 margin-top_10">{{tipsObj.httpMes}}</div>
+  </div>
+</div>
+<!--请求返回错误case end-->

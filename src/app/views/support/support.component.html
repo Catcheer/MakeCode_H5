@@ -1,13 +1,4 @@
-<!--err process start-->
-<div class="flex-box align-items-center justify-center height-b_100 bg-color-fff text-center font-size_28" *ngIf="errObj.err">
-  <div>
-    <img class="w_220" src="../../../assets/images/error.jpg" alt="">
-    <div class="color_999 margin-top_10">{{errObj.errMes}}</div>
-  </div>
-</div>
-<!--err process end-->
-
-<div class="bg-color-fff" *ngIf="!errObj.err">
+<div class="bg-color-fff" *ngIf="!wetoastServer.httpFail">
   <!--国家list start-->
   <div class="">
     <ul class="all-countries-list height_80 bg-color_555 over-x-scroll white-space-nowrap">

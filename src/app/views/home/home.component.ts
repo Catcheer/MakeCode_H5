@@ -12,7 +12,10 @@ export class HomeComponent {
   private webUrl: string = ''
   public tipsObj: any
 
-  constructor(private router: Router, private wetoastServer: WetoastServer) {}
+  constructor(private router: Router, private wetoastServer: WetoastServer) {
+    this.wetoastServer.httpFail = false
+    this.wetoastServer.httpMes = ""
+  }
   /**
    * 点击一键海淘按钮
    * 
