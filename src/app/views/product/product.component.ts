@@ -16,11 +16,11 @@ class UlrCode {
 
 export class ProductComponent implements OnInit {
   private productData: any = {
-    Picture: '/src/assets/images/balls.svg'
+    Picture: ''
   }
   private tmpParam: any
   public urlcode: UlrCode
-  public qrCode: string = '/src/assets/images/placeholderImg.png'
+  public qrCode: string = ''
   public orignUrl: string = ""
   constructor(private route: ActivatedRoute, private product: ProductServer, private titleService: Title) { }
   ngOnInit(): void {

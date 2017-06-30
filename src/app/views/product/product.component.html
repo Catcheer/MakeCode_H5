@@ -3,8 +3,9 @@
     <!--商品信息 start-->
     <div class="flex-box padding-top_30">
       <!--图片 start-->
-      <div class="w_220 height_220 margin-right_20">
-        <img class="w_220 height_220" [src]="productData.Picture" alt="">
+      <div class="w_220 height_220 margin-right_20 flex-box align-items-center justify-center">
+        <img *ngIf="!productData.Picture" src="../../../assets/images/balls.svg" alt="">
+        <img *ngIf="productData.Picture" class="w_220 height_220" [src]="productData.Picture" alt="">
       </div>
       <!--图片 end-->
       <!--文字描述 start-->

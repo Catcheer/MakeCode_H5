@@ -17,9 +17,8 @@ export class SupportComponent implements OnInit {
   public allCountryList: string[] = []
   public seledCountry: string = allOfCountry
   private errObj: any = {
-    err: true,
+    err: false,
     errMes: "",
-    imgSrc: ""
   }
   constructor(private product: ProductServer, private titleService: Title) { }
   ngOnInit() {
@@ -40,11 +39,10 @@ export class SupportComponent implements OnInit {
       .then((res: any) => {
         console.log(res)
         if (res.httpFalse) {
+          this.errObj.err = true
           this.errObj.errMes = res.errMes
-          this.errObj.imgSrc = "/src/assets/images/error.jpg"
           return
         } else {
-          this.errObj.err = false
           const list = res.List
           this.webListAll = list
           this.allCountryList = this.FilterCountriesList(list)
