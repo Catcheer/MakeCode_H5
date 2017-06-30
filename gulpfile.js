@@ -3,6 +3,7 @@ var px2rem = require('gulp-pxrem')
 var sass = require('gulp-sass')
 var rename = require('gulp-rename')
 var autoprefixer = require('gulp-autoprefixer')
+var cssmin = require('gulp-clean-css');
 
 
 
@@ -21,6 +22,7 @@ gulp.task('sass', () => gulp.src('./src/style.scss')
     remPrecision: 6
   }))
   .pipe(rename('style.css'))
+  .pipe(cssmin('style.css'))
   .pipe(gulp.dest('./src/')))
 
 
