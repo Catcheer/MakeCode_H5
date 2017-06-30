@@ -28,7 +28,7 @@ export class ProductServer {
    * @memberof ProductServer
    */
   getAllWebs() {
-    const url: string = "/catelog/categories0"
+    const url: string = "/catelog/categories"
     const obj = {
       "AppKey": "78701677fa28465ca5fb624a51a9dca4",
       "ClientInfo": {
