@@ -1,4 +1,11 @@
-<div class="bg-color-fff">
+<div class="flex-box align-items-center justify-center height-b_100 bg-color-fff text-center font-size_28" *ngIf="errObj.err">
+  <div>
+    <img class="w_220" [src]="errObj.imgSrc" alt=""> 
+    <div class="color_999 margin-top_10">{{errObj.errMes}}</div>
+  </div>
+</div>
+
+<div class="bg-color-fff" *ngIf="!errObj.err">
   <!--国家list start-->
   <div class="">
     <ul class="all-countries-list height_80 bg-color_555 over-x-scroll white-space-nowrap">

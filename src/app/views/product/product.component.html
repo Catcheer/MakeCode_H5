@@ -17,7 +17,7 @@
         </div>
         <div class="font-size_26">
           <span class="color_999">源自</span>
-          <a [href]="productData.Url" class="color_0079ff ">{{productData.SiteName}}</a>
+          <a [href]="'http://www.'+orignUrl" class="color_0079ff ">{{productData.SiteName}}</a>
           <span class="arr-right"></span>
         </div>
       </div>
@@ -28,7 +28,7 @@
 
     <!--商品二维码 start-->
     <div class="w_650 height_738  margin-y-auto margin-top_60 position-relative text-center">
-        <img class="w_570 margin-top_45" [src]="qrCode" alt="">
+      <img class="w_570 margin-top_45" [src]="qrCode" alt="">
       <div>
         <img class="w_110 height_110 position-absolute top_0 left_0" src="../../../assets/images/coner.png" alt="">
         <img class="w_110 height_110 position-absolute top_0 right_0 transform-rotate_90" src="../../../assets/images/coner.png"

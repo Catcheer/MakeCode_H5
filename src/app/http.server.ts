@@ -5,8 +5,13 @@ const checkStatus = (response: any) => {
     return response
   } else {
     var error = new Error(response.statusText)
-    error = response
-    throw error
+    // error = response
+    // throw error
+    const obj = {
+      errMes: '服务器开小差了，请稍后再试~',
+      httpFalse: true
+    }
+    throw obj
   }
 }
 

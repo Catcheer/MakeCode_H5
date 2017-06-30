@@ -16,6 +16,11 @@ export class SupportComponent implements OnInit {
   public webList: any = []
   public allCountryList: string[] = []
   public seledCountry: string = allOfCountry
+  private errObj: any = {
+    err: true,
+    errMes: "",
+    imgSrc: ""
+  }
   constructor(private product: ProductServer, private titleService: Title) { }
   ngOnInit() {
     // 初始化
@@ -33,10 +38,19 @@ export class SupportComponent implements OnInit {
     this.titleService.setTitle('支持的海外网站')
     this.product.getAllWebs()
       .then((res: any) => {
-        const list = res.List
-        this.webListAll = list
-        this.allCountryList = this.FilterCountriesList(list)
-        this.webList = this.seledCountryWebList(this.seledCountry, this.webListAll)
+        console.log(res)
+        if (res.httpFalse) {
+          this.errObj.errMes = res.errMes
+          this.errObj.imgSrc = "/src/assets/images/error.jpg"
+          return
+        } else {
+          this.errObj.err = false
+          const list = res.List
+          this.webListAll = list
+          this.allCountryList = this.FilterCountriesList(list)
+          this.webList = this.seledCountryWebList(this.seledCountry, this.webListAll)
+        }
+
       })
   }
   /**
