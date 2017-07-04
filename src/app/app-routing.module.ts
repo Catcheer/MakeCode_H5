@@ -9,19 +9,23 @@ import { ExampleComponent } from './views/example/example.component'
 const routes = [
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    name:'home'
   },
   {
     path: 'support',
-    component: SupportComponent
+    component: SupportComponent,
+    name:'support'
   },
   {
     path: 'product',
-    component: ProductComponent
+    component: ProductComponent,
+    name:'product'
   },
   {
     path: 'example',
-    component: ExampleComponent
+    component: ExampleComponent,
+    name:'example'
   },
   {
     path: '',

@@ -15,8 +15,9 @@
 <!--请求返回错误case start-->
 <div class="flex-box align-items-center justify-center height-b_100 bg-color-fff text-center font-size_28" *ngIf="tipsObj.httpFail">
   <div>
-    <img class="w_220" src="../../../assets/images/error.jpg" alt="">
-    <div class="color_999 margin-top_10">{{tipsObj.httpMes}}</div>
+    <img *ngIf="tipsObj.curHash=='product'" class="w_387" src="../../../assets/images/craw-fail.png" alt="">
+    <img *ngIf="tipsObj.curHash==''" class="w_220" src="../../../assets/images/error.jpg" alt="">
+    <div class="color_666 margin-top_40 line-height_45 font-size_32" [innerHTML]="tipsObj.httpMes"></div>
   </div>
 </div>
 <!--请求返回错误case end-->

@@ -8,4 +8,5 @@ export class WetoastServer {
   public showLoadingBalls: boolean = false
   public httpFail: boolean = false
   public httpMes: string = ""
+  public curHash: string = ''
 }

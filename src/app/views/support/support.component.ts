@@ -36,6 +36,7 @@ export class SupportComponent implements OnInit {
     this.wetoastServer.showLoadingBalls = true
     this.wetoastServer.httpFail = false
     this.wetoastServer.httpMes = ""
+    this.wetoastServer.curHash = ''
     this.product.getAllWebs()
       .then((res: any) => {
         console.log(res)

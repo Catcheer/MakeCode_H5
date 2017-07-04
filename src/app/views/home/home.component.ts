@@ -15,6 +15,7 @@ export class HomeComponent {
   constructor(private router: Router, private wetoastServer: WetoastServer) {
     this.wetoastServer.httpFail = false
     this.wetoastServer.httpMes = ""
+    this.wetoastServer.curHash = ''
   }
   /**
    * 点击一键海淘按钮

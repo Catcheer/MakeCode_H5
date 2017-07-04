@@ -9,5 +9,6 @@ export class ExampleComponent {
   constructor(private wetoastServer: WetoastServer) {
     this.wetoastServer.httpFail = false
     this.wetoastServer.httpMes = ""
+    this.wetoastServer.curHash = ''
   }
 }
