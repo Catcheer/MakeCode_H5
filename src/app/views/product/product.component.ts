@@ -29,6 +29,9 @@ export class ProductComponent implements OnInit {
     this.wetoastServer.httpMes = ""
     this.wetoastServer.curHash = ''
 
+
+    this.qrCode = `${CONFIG.host}/d/qrcode?target=${localStorage.target}`
+
     // 请求接口
     const obj = {
       "target": `${localStorage.target}`
@@ -42,20 +45,21 @@ export class ProductComponent implements OnInit {
         return
       }
       const OriginalPrice = res.Data.OriginalPrice
-      if (OriginalPrice <= 0) {
+      let url = res.Data.Url
+      if (url) {
+        this.orignUrl = Tool.topDomain(url)
+      }
+      if (OriginalPrice <= 0 && url) {
         this.wetoastServer.httpFail = true
         this.wetoastServer.httpMes = `抱歉，您输入的网址暂时无法下单，<br/>试试其他商品链接吧！`
         this.wetoastServer.curHash = "product"
         return
       }
       this.productData = res.Data
-      let url = res.Data.Url
-      this.orignUrl = Tool.topDomain(url)
       this.showPage = true
     })
     // set title
     this.titleService.setTitle('长按二维码下单')
-    this.qrCode = `${CONFIG.host}/d/qrcode?target=${localStorage.target}`
-    console.log(this.route)
+
   }
 }

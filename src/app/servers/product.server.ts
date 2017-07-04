@@ -1,5 +1,6 @@
 import { Component, Injectable } from '@angular/core'
 import { HttpServer } from '../http.server'
+import CONFIG from '../base.config'
 
 @Injectable()
 
@@ -13,7 +14,7 @@ export class ProductServer {
    * @memberof ProductServer
    */
   getProduct(obj: any) {
-    const url: string = "/sixcity"
+    const url: string = `${CONFIG.host}/sixcity`
     const result = this.http.post(url, obj)
 
     result.then(res => {
@@ -28,7 +29,7 @@ export class ProductServer {
    * @memberof ProductServer
    */
   getAllWebs() {
-    const url: string = "/catelog/categories"
+    const url: string = `${CONFIG.Api}/catelog/categories`
     const obj = {
       "AppKey": "78701677fa28465ca5fb624a51a9dca4",
       "ClientInfo": {

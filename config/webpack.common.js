@@ -25,7 +25,12 @@ module.exports = {
         secure: false
       },
       '/catelog/*': {
-        target: 'http://192.168.1.187:9000',
+        target: 'http://api.6city.com:80',
+        changeOrigin: true,
+        secure: false
+      },
+      '/d/*': {
+        target: 'http://www.6city.com:80',
         changeOrigin: true,
         secure: false
       }
@@ -50,7 +55,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-        loader: 'file-loader?name=assets/[name].[hash].[ext]'
+        loader: 'file-loader?name=assets/images/[name].[hash].[ext]'
       },
       {
         test: /\.(css)$/,
