@@ -56,23 +56,28 @@ export class ProductComponent implements OnInit {
       }
       return res
     }).then((res) => {
-      this.product.websRate().then(webSiteList => {
-        const vm = this
-        const product = res.Data
-        const list = webSiteList.List
-        this.PriceRmb(list, product, vm).then((productPriceRmb) => {
-          this.productData = productPriceRmb
-          this.showPage = true
-        })
-
-      })
+      const vm = this
+      const product = res.Data
+      return this.PriceRmb(product, vm)
+    }).then((productPriceRmb) => { // 根据国家汇率计算商品人民币价格
+      this.productData = productPriceRmb
+      this.showPage = true
     }).catch((err) => {
       console.log(err)
     })
 
   }
 
-  PriceRmb(list: any, product: any, vm: any) {
+  /**
+   * 根据国家汇率计算商品人民币价格
+   * 
+   * @param {*} list 
+   * @param {*} product 
+   * @param {*} vm 
+   * @returns 
+   * @memberof ProductComponent
+   */
+  PriceRmb(product: any, vm: any) {
     return new Promise((resolve, reject) => {
       if (!product.Site) {
         console.log("product")
@@ -82,7 +87,7 @@ export class ProductComponent implements OnInit {
       const siteName = product.Site.Name
       const url = product.Site.Url
       const host = Tool.topDomain(url)
-      const webSite = list.find((val: any) => val.WebSiteName == siteName)
+      // 国家汇率
       vm.product.countryRate(host).then((country: any) => {
         const rate = country.Data.Rate
         console.log(rate)
