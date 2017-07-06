@@ -60,10 +60,11 @@ export class ProductComponent implements OnInit {
         const vm = this
         const product = res.Data
         const list = webSiteList.List
-        const productPriceRmb = this.PriceRmb(list, product, vm)
-        console.log(productPriceRmb)
-        this.productData = productPriceRmb
-        this.showPage = true
+        this.PriceRmb(list, product, vm).then((productPriceRmb) => {
+          this.productData = productPriceRmb
+          this.showPage = true
+        })
+
       })
     }).catch((err) => {
       console.log(err)
@@ -72,17 +73,23 @@ export class ProductComponent implements OnInit {
   }
 
   PriceRmb(list: any, product: any, vm: any) {
-    let obj = {}
-    if (product.Site) {
+    return new Promise((resolve, reject) => {
+      if (!product.Site) {
+        console.log("product")
+        console.log(product)
+        resolve(product)
+      }
       const siteName = product.Site.Name
+      const url = product.Site.Url
+      const host = Tool.topDomain(url)
       const webSite = list.find((val: any) => val.WebSiteName == siteName)
-      const rate = webSite.Rate
-      product.RmbPrice = (product.Price * rate).toFixed(2)
-    }
-    return product
+      vm.product.countryRate(host).then((country: any) => {
+        const rate = country.Data.Rate
+        console.log(rate)
+        product.RmbPrice = (product.Price * rate).toFixed(2)
+        resolve(product)
+      })
+    })
+
   }
-
-
-
-
 }

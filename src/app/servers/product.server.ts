@@ -38,6 +38,25 @@ export class ProductServer {
   }
 
 
+  /**
+   * 国家汇率
+   * 
+   * @param {string} [host='www.amazon.com'] 
+   * @param {string} [currencyCode='CNY'] 
+   * @returns 
+   * @memberof ProductServer
+   */
+  countryRate(host: string = 'www.amazon.com') {
+    const url: string = `${CONFIG.Api}/catelog/country`
+    const obj = {
+      "host": host,
+      "CurrencyCode": "CNY"
+    }
+    const result = this.http.post(url, obj)
+    return result
+  }
+
+
 
   /**
    * support all of sea webs
