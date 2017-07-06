@@ -5,8 +5,6 @@ var helpers = require('./helpers');
 
 module.exports = {
 
-
-
   entry: {
     'polyfills': './src/polyfills.ts',
     'vendor': './src/vendor.ts',
@@ -19,16 +17,6 @@ module.exports = {
   // webpack-dev-server的配置
   devServer: {
     proxy: {
-      '/sixcity': {
-        target: 'http://www.6city.com:80',
-        changeOrigin: true,
-        secure: false
-      },
-      '/catelog/*': {
-        target: 'http://api.6city.com:80',
-        changeOrigin: true,
-        secure: false
-      },
       '/d/*': {
         target: 'http://www.6city.com:80',
         changeOrigin: true,

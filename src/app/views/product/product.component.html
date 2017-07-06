@@ -4,21 +4,21 @@
     <div class="flex-box padding-top_30 align-items-center">
       <!--图片 start-->
       <div class="w_220 height_220 margin-right_20 flex-box align-items-center justify-center">
-        <img *ngIf="!productData.Picture" class="w_220 height_220" src="../../../assets/images/balls.svg" alt="">
-        <img *ngIf="productData.Picture" class="w_220 height_220" [src]="productData.Picture" alt="">
+        <img *ngIf="!productData?.Picture" class="w_220 height_220" src="../../../assets/images/balls.svg" alt="">
+        <img *ngIf="productData?.Picture" class="w_220 height_220" [src]="productData?.Picture" alt="">
       </div>
       <!--图片 end-->
       <!--文字描述 start-->
       <div class="flex_1">
         <h4 class="font-size_32 line-height_45 height-max_90 line-two">
-          {{productData.Title}}
+          {{productData?.Title}}
         </h4>
         <div class="color_000 font-size_32 margin-top_26 margin-bottom_23 line-height_42">
-          <span class="font-weight_600"> RMB {{productData.Price}}</span> <span class="color_999 font-size_24">(国际运费后付)</span>
+          <span class="font-weight_600"> RMB {{productData?.RmbPrice}}</span> <span class="color_999 font-size_24">(国际运费后付)</span>
         </div>
         <div class="font-size_26">
           <span class="color_999">源自</span>
-          <a [href]="'http://www.'+orignUrl" class="color_0079ff ">{{productData.SiteName}}</a>
+          <a [href]="productData?.Site?.Url" class="color_0079ff ">{{productData?.Site?.Name}}</a>
           <span class="arr-right"></span>
         </div>
       </div>

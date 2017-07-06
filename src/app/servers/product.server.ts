@@ -14,7 +14,7 @@ export class ProductServer {
    * @memberof ProductServer
    */
   getProduct(obj: any) {
-    const url: string = `${CONFIG.host}/sixcity`
+    const url: string = `${CONFIG.Api}/grab/detail`
     const result = this.http.post(url, obj)
 
     result.then(res => {
@@ -22,6 +22,23 @@ export class ProductServer {
     })
     return result
   }
+
+  /**
+   * 网站汇率
+   * 
+   * @memberof ProductServer
+   */
+  websRate() {
+    const url: string = `${CONFIG.Api}/catelog/website/rate`
+    const obj = {
+      "AppKey": CONFIG.AppKey
+    }
+    const result = this.http.post(url, obj)
+    return result
+  }
+
+
+
   /**
    * support all of sea webs
    * 
@@ -31,7 +48,7 @@ export class ProductServer {
   getAllWebs() {
     const url: string = `${CONFIG.Api}/catelog/categories`
     const obj = {
-      "AppKey": "78701677fa28465ca5fb624a51a9dca4",
+      "AppKey": CONFIG.AppKey,
       "ClientInfo": {
         "FromClient": 128,
         "MachineInfo": "手机型号:64-bit Simulator,软件版本:1.2.9",
