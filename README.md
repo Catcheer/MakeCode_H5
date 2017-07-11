@@ -21,3 +21,8 @@
 ```
 npm install concurrently -g
 ```
+
+
+### 打包
+
+bulild 时 需要将src/base.config.ts  Api修改为线上配置   'Api': 'http://api.6city.com'
