@@ -58,8 +58,8 @@ export class ProductComponent implements OnInit {
     }).then((res) => {
       const vm = this
       const product = res.Data
-      return this.PriceRmb(product, vm)
-    }).then((productPriceRmb) => { // 根据国家汇率计算商品人民币价格
+      return this.PriceRmb(product, vm) // 根据国家汇率计算商品人民币价格
+    }).then((productPriceRmb) => {
       this.productData = productPriceRmb
       this.showPage = true
     }).catch((err) => {
