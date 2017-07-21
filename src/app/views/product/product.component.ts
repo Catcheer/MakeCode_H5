@@ -48,7 +48,7 @@ export class ProductComponent implements OnInit {
         throw Error('服务器返回数据错误')
       }
       const Price = res.Data.Price
-      if (Price < 0) {
+      if (Price <= 0) {
         this.wetoastServer.httpFail = true
         this.wetoastServer.httpMes = `抱歉，您输入的网址暂时无法下单，<br/>试试其他商品链接吧！`
         this.wetoastServer.curHash = "product"
@@ -61,7 +61,7 @@ export class ProductComponent implements OnInit {
       if (!product.Site) {
         console.log("product")
         console.log(product)
-        Promise.resolve(product)
+        return product
       } else {
         return this.PriceRmb(product, vm) // 根据网站汇率计算商品人民币价格
       }
