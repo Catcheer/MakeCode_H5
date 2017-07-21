@@ -82,4 +82,20 @@ export class ProductServer {
     return result
   }
 
+  /**
+   * 网站信息  网站汇率
+   * 
+   * @param {string} [TopDomain="amazon.co.jp"] 
+   * @memberof ProductServer
+   */
+  websiteRate(TopDomain: string = "amazon.co.jp") {
+    const url: string = `${CONFIG.Api}/catelog/website/rate`
+    const obj = {
+      "TopDomain": TopDomain,
+      "AppKey": CONFIG.AppKey
+    }
+    const result = this.http.post(url, obj)
+    return result
+  }
+
 }

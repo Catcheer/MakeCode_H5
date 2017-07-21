@@ -7,7 +7,7 @@
     "ng": "ng",
     "sass": "gulp",
     "dev": "webpack-dev-server --inline --progress --port 8080 --host 0.0.0.0",
-    "start": "concurrently \"npm run dev\" \"npm run sass\"",
+    "start": "npm run dev & npm run sass",
     "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
     "test": "ng test",
     "lint": "ng lint",

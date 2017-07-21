@@ -58,9 +58,17 @@ export class ProductComponent implements OnInit {
     }).then((res) => {
       const vm = this
       const product = res.Data
-      return this.PriceRmb(product, vm) // 根据国家汇率计算商品人民币价格
-    }).then((productPriceRmb) => {
-      this.productData = productPriceRmb
+      if (!product.Site) {
+        console.log("product")
+        console.log(product)
+        Promise.resolve(product)
+      } else {
+        return this.PriceRmb(product, vm) // 根据网站汇率计算商品人民币价格
+      }
+    }).then((product: any) => {
+      console.log(product)
+      product.RmbPrice = (product.Price * product.rate).toFixed(2)
+      this.productData = product
       this.showPage = true
     }).catch((err) => {
       console.log(err)
@@ -69,7 +77,7 @@ export class ProductComponent implements OnInit {
   }
 
   /**
-   * 根据国家汇率计算商品人民币价格
+   * 获取汇率 优先使用网站汇率
    * 
    * @param {*} list 
    * @param {*} product 
@@ -78,23 +86,32 @@ export class ProductComponent implements OnInit {
    * @memberof ProductComponent
    */
   PriceRmb(product: any, vm: any) {
+    console.log(product)
     return new Promise((resolve, reject) => {
-      if (!product.Site) {
-        console.log("product")
-        console.log(product)
-        resolve(product)
-      }
-      const siteName = product.Site.Name
+      let rate = 1
       const url = product.Site.Url
-      const host = Tool.topDomain(url)
-      // 国家汇率
-      vm.product.countryRate(host).then((country: any) => {
-        const rate = country.Data.Rate
-        console.log(rate)
-        product.RmbPrice = (product.Price * rate).toFixed(2)
-        resolve(product)
+      const topDomain = Tool.topDomain(url)
+
+      //网站汇率 
+      vm.product.websiteRate(topDomain).then((Website: any) => {
+        if (Website && Website.List.length > 0) {
+          rate = Website.List[0].Rate
+          console.log("website rate")
+          product.rate = rate
+          resolve(product)
+        } else {
+          // 取不到网站汇率时 使用国家汇率
+          vm.product.countryRate(topDomain).then((country: any) => {
+            rate = country.Data.Rate
+            console.log('国家汇率')
+            console.log(rate)
+            product.rate = rate
+            resolve(product)
+          })
+        }
       })
     })
 
   }
 }
+
