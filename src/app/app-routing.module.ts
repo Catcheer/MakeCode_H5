@@ -10,22 +10,22 @@ const routes = [
   {
     path: 'home',
     component: HomeComponent,
-    name:'home'
+    name: 'home'
   },
   {
     path: 'support',
     component: SupportComponent,
-    name:'support'
+    name: 'support'
   },
   {
-    path: 'product',
+    path: 'product/:code',
     component: ProductComponent,
-    name:'product'
+    name: 'product'
   },
   {
     path: 'example',
     component: ExampleComponent,
-    name:'example'
+    name: 'example'
   },
   {
     path: '',

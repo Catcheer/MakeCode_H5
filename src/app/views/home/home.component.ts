@@ -35,10 +35,11 @@ export class HomeComponent {
       this.changeWetoastState(mes)
       return false
     }
-    this.router.navigate(['/product']);
-    console.log(this.webUrl)
-    localStorage.target = this.webUrl
-    console.log(localStorage.target)
+    // this.router.navigate(['/product']);
+    this.router.navigate(['/product', decodeURIComponent(this.webUrl)]);
+    // console.log(this.webUrl)
+    // localStorage.target = this.webUrl
+    // console.log(localStorage.target)
   }
   /**
    * 根据验证状态change wetoast

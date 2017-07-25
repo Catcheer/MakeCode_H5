@@ -22,6 +22,7 @@ export class ProductComponent implements OnInit {
   public qrCode: string = ''
   public siteName: string = ""
   public showPage: boolean = false
+  public target: string = ''
   constructor(private route: ActivatedRoute, private product: ProductServer, private titleService: Title, private wetoastServer: WetoastServer) { }
   ngOnInit(): void {
     // set title
@@ -33,11 +34,19 @@ export class ProductComponent implements OnInit {
     this.wetoastServer.curHash = ''
 
 
-    this.qrCode = `${CONFIG.host}/d/qrcode?target=${localStorage.target}`
+    this.route.params
+      .switchMap((params: Params) => this.tmpParam = params['code'])
+      .subscribe(() => this.target = this.tmpParam);
+    console.log('target')
+    console.log(this.target)
+
+    // this.qrCode = `${CONFIG.host}/d/qrcode?target=${localStorage.target}`
+    this.qrCode = `${CONFIG.host}/d/qrcode?target=${this.target}`
+
 
     // 请求商品信息
     const obj = {
-      "url": `${localStorage.target}`
+      "url": `${this.target}`
     }
     this.product.getProduct(obj).then((res) => {
       this.wetoastServer.showLoadingBalls = false // hide loading balls
@@ -67,7 +76,7 @@ export class ProductComponent implements OnInit {
       }
     }).then((product: any) => {
       console.log(product)
-      product.RmbPrice = (product.Price * product.rate).toFixed(2)
+      product.RmbPrice = (product.Price * product.rate || 1).toFixed(2)
       this.productData = product
       this.showPage = true
     }).catch((err) => {
